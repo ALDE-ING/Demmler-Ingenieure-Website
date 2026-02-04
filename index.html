@@ -1,1 +1,475 @@
-<!DOCTYPE html><html lang="de"><head>    <meta charset="UTF-8">    <title>Ingenieurbüro Demmler | Infrastruktur</title>    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <style>        body {            font-family: Arial, sans-serif;            margin: 0;            background: #f5f5f5;            color: #222;        }        header {            background: #1f3a5f;            color: white;            padding: 40px 20px;            text-align: center;        }        nav {            background: #14263f;            padding: 10px;            text-align: center;        }        nav a {            color: white;            text-decoration: none;            margin: 0 15px;            font-weight: bold;        }        nav a:hover {            text-decoration: underline;        }        section {            max-width: 1000px;            margin: auto;            padding: 50px 20px;            background: white;            margin-top: 20px;        }        h2 {            color: #1f3a5f;        }        .leistungen {            display: grid;            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));            gap: 20px;        }        .box {            background: #eef2f6;            padding: 20px;            border-radius: 5px;        }        footer {            background: #1f3a5f;            color: white;            text-align: center;            padding: 25px;            margin-top: 40px;        }        .kontakt p {            line-height: 1.8;        }        @media (max-width: 600px) {            header h1 {                font-size: 26px;            }        }    </style></head><body><header>    <h1>Ingenieurbüro Demmler</h1>    <p>Planung & Projektsteuerung für Verkehrs- und Energieinfrastruktur</p></header><nav>    <a href="#ueber">Über uns</a>    <a href="#leistungen">Leistungen</a>    <a href="#projekte">Projekte</a>    <a href="#kontakt">Kontakt</a></nav><section id="ueber">    <h2>Über uns</h2>    <p>        Wir sind ein unabhängiges Ingenieurbüro mit Schwerpunkt auf        Schienen-, Straßen- und Energieinfrastruktur.        Mit langjähriger Erfahrung begleiten wir komplexe Projekte        von der Planung bis zur Umsetzung.    </p>    <p>        Unser Anspruch ist Qualität, Verlässlichkeit und        partnerschaftliche Zusammenarbeit.    </p></section><section id="leistungen">    <h2>Unsere Leistungen</h2>    <div class="leistungen">        <div class="box">            <h3>Schieneninfrastruktur</h3>            <p>                Projektsteuerung, Bauüberwachung,                Koordination von Bahnhofs-, Strecken- und OLA-Projekten.            </p>        </div>        <div class="box">            <h3>Straßenbau</h3>            <p>                Planung und Betreuung von Verkehrswegen,                Knotenpunkten und Erschließungsmaßnahmen.            </p>        </div>        <div class="box">            <h3>Energie & Strom</h3>            <p>                Infrastruktur für Energieversorgung,                Leitungsbau und technische Anlagen.            </p>        </div>        <div class="box">            <h3>Projektmanagement</h3>            <p>                Termin-, Kosten- und Qualitätssteuerung                für öffentliche und private Bauherren.            </p>        </div>    </div></section><section id="projekte">    <h2>Referenzen & Projekte</h2>    <ul>        <li>Ausbau Bahnstrecke ABS 38</li>        <li>Modernisierung Bahnhofsanlagen</li>        <li>Erneuerung Oberleitungsanlagen</li>        <li>Verkehrsanlagen kommunaler Träger</li>    </ul></section><section id="kontakt" class="kontakt">    <h2>Kontakt</h2>    <p>        Ingenieurbüro Demmler<br>        Musterstraße 1<br>        9490 Mauren<br>        Liechtenstein    </p>    <p>        Telefon: +423 xxx xx xx<br>        E-Mail: info@deinedomain.li    </p></section><footer>    <p>        © 2026 Ingenieurbüro Demmler · Alle Rechte vorbehalten    </p></footer></body></html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demmler Ingenieure | Infrastruktur für Schiene, Straße & Energie</title>
+    <meta name="description" content="Demmler Ingenieure - Unabhängiges Ingenieurbüro für Planung und Projektsteuerung im Bereich Schienen-, Straßen- und Energieinfrastruktur in Liechtenstein.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1f3a5f;
+            --primary-dark: #14263f;
+            --accent: #e67e22;
+            --light-bg: #f5f5f5;
+            --white: #ffffff;
+            --text: #222222;
+            --text-light: #666666;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text);
+            background: var(--light-bg);
+            line-height: 1.7;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(90deg, transparent 0%, transparent 49%, rgba(255,255,255,0.03) 50%, transparent 51%, transparent 100%),
+                linear-gradient(0deg, transparent 0%, transparent 49%, rgba(255,255,255,0.03) 50%, transparent 51%, transparent 100%);
+            background-size: 40px 40px;
+            opacity: 0.5;
+        }
+        
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Navigation */
+        nav {
+            background: var(--primary-dark);
+            padding: 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav a {
+            display: inline-block;
+            color: var(--white);
+            text-decoration: none;
+            padding: 18px 25px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: var(--accent);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        nav a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        nav a:hover::after {
+            width: 80%;
+        }
+        
+        /* Sections */
+        section {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 60px 30px;
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            border-radius: 8px;
+        }
+        
+        section h2 {
+            color: var(--primary);
+            font-size: 2.3rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+        }
+        
+        section p {
+            margin: 25px 0;
+            color: var(--text);
+            font-size: 1.05rem;
+        }
+        
+        /* Leistungen Grid */
+        .leistungen-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .box {
+            background: var(--light-bg);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+        
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            border-left-color: var(--primary);
+        }
+        
+        .box h3 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .box p {
+            color: var(--text-light);
+            font-size: 0.98rem;
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        /* Referenzen Liste */
+        #projekte ul {
+            list-style: none;
+            margin-top: 30px;
+        }
+        
+        #projekte li {
+            padding: 18px 20px;
+            margin: 12px 0;
+            background: var(--light-bg);
+            border-left: 4px solid var(--primary);
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+        }
+        
+        #projekte li:hover {
+            background: #e8eef5;
+            padding-left: 30px;
+        }
+        
+        #projekte li::before {
+            content: '▸ ';
+            color: var(--accent);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        /* Kontakt Section */
+        .kontakt-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .kontakt-box {
+            background: var(--light-bg);
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 3px solid var(--accent);
+        }
+        
+        .kontakt-box h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .kontakt-box p {
+            margin: 8px 0;
+            line-height: 1.9;
+        }
+        
+        .kontakt-box a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .kontakt-box a:hover {
+            color: var(--accent);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 35px 20px;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            header p {
+                font-size: 1rem;
+            }
+            
+            section h2 {
+                font-size: 1.8rem;
+            }
+            
+            nav a {
+                display: block;
+                padding: 15px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            section {
+                margin: 20px 15px;
+                padding: 40px 20px;
+            }
+        }
+        
+        @media (max-width: 500px) {
+            header h1 {
+                font-size: 1.6rem;
+            }
+            
+            .leistungen-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div style="max-width: 450px; margin: 0 auto 20px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" width="100%" height="auto">
+            <defs>
+                <style>
+                    .logo-main { 
+                        font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; 
+                        font-size: 140px; 
+                        font-weight: 700; 
+                        fill: #000000; 
+                        letter-spacing: -2px;
+                    }
+                    .logo-sub { 
+                        font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; 
+                        font-size: 42px; 
+                        font-weight: 300; 
+                        fill: #4a7c4e; 
+                        letter-spacing: 18px;
+                    }
+                </style>
+            </defs>
+            <text x="0" y="140" class="logo-main">DEMMLER</text>
+            <text x="0" y="210" class="logo-sub">INGENIEURE</text>
+        </svg>
+    </div>
+    <p>Planung & Projektsteuerung für Verkehrs- und Energieinfrastruktur</p>
+</header>
+
+<nav>
+    <a href="#ueber">Über uns</a>
+    <a href="#leistungen">Leistungen</a>
+    <a href="#projekte">Projekte</a>
+    <a href="#kontakt">Kontakt</a>
+</nav>
+
+<section id="ueber">
+    <h2>Über uns</h2>
+
+    <p>
+        Wir sind ein unabhängiges Ingenieurbüro mit Schwerpunkt auf
+        Schienen-, Straßen- und Energieinfrastruktur.
+        Mit langjähriger Erfahrung begleiten wir komplexe Projekte
+        von der Planung bis zur Umsetzung.
+    </p>
+
+    <p>
+        Unser Anspruch ist Qualität, Verlässlichkeit und
+        partnerschaftliche Zusammenarbeit. Wir unterstützen öffentliche
+        und private Bauherren bei der erfolgreichen Realisierung ihrer
+        Infrastrukturvorhaben.
+    </p>
+</section>
+
+<section id="leistungen">
+    <h2>Unsere Leistungen</h2>
+
+    <div class="leistungen-grid">
+
+        <div class="box">
+            <h3>Schieneninfrastruktur</h3>
+            <p>
+                Projektsteuerung, Bauüberwachung und
+                Koordination von Bahnhofs-, Strecken- und OLA-Projekten.
+                Fachliche Begleitung bei Modernisierungs- und Ausbaumaßnahmen.
+            </p>
+        </div>
+
+        <div class="box">
+            <h3>Straßenbau</h3>
+            <p>
+                Planung und Betreuung von Verkehrswegen,
+                Knotenpunkten und Erschließungsmaßnahmen.
+                Verkehrsplanung für kommunale und überregionale Projekte.
+            </p>
+        </div>
+
+        <div class="box">
+            <h3>Energie & Strom</h3>
+            <p>
+                Infrastruktur für Energieversorgung,
+                Leitungsbau und technische Anlagen.
+                Planung und Koordination energietechnischer Systeme.
+            </p>
+        </div>
+
+        <div class="box">
+            <h3>Projektmanagement</h3>
+            <p>
+                Termin-, Kosten- und Qualitätssteuerung
+                für öffentliche und private Bauherren.
+                Koordination aller Projektbeteiligten.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="projekte">
+    <h2>Referenzen & Projekte</h2>
+
+    <p>
+        Auszug aus unseren erfolgreich realisierten Projekten
+        im Bereich Verkehrs- und Energieinfrastruktur:
+    </p>
+
+    <ul>
+        <li>Ausbau Bahnstrecke ABS 38</li>
+        <li>Modernisierung Bahnhofsanlagen</li>
+        <li>Erneuerung Oberleitungsanlagen</li>
+        <li>Verkehrsanlagen kommunaler Träger</li>
+        <li>Infrastrukturprojekte Energieversorgung</li>
+        <li>Streckenausbau und Elektrifizierung</li>
+    </ul>
+</section>
+
+<section id="kontakt">
+    <h2>Kontakt</h2>
+
+    <p>
+        Nehmen Sie Kontakt mit uns auf – wir freuen uns auf Ihre Anfrage
+        und beraten Sie gerne zu Ihrem Projekt.
+    </p>
+
+    <div class="kontakt-grid">
+        
+        <div class="kontakt-box">
+            <h3>Adresse</h3>
+            <p>
+                Demmler Ingenieure<br>
+                Musterstraße 1<br>
+                9490 Mauren<br>
+                Liechtenstein
+            </p>
+        </div>
+
+        <div class="kontakt-box">
+            <h3>Telefon & E-Mail</h3>
+            <p>
+                Telefon: <a href="tel:+423xxxxxxx">+423 xxx xx xx</a><br>
+                E-Mail: <a href="mailto:info@deinedomain.li">info@deinedomain.li</a>
+            </p>
+        </div>
+
+        <div class="kontakt-box">
+            <h3>Geschäftszeiten</h3>
+            <p>
+                Montag – Freitag<br>
+                08:00 – 12:00 Uhr<br>
+                13:00 – 17:00 Uhr
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>
+        © 2026 Demmler Ingenieure · Alle Rechte vorbehalten
+    </p>
+</footer>
+
+</body>
+</html>
