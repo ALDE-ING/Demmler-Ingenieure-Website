@@ -48,6 +48,7 @@
         .logo-container img {
             height: 60px;
             width: auto;
+            display: block;
         }
 
         .nav-link {
@@ -95,6 +96,11 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
             border-left: 4px solid var(--color-primary);
             margin-bottom: 15px;
+            transition: transform 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateX(5px);
         }
 
         .footer {
@@ -108,6 +114,7 @@
             display: none;
             font-size: 24px;
             cursor: pointer;
+            color: var(--color-primary);
         }
 
         @media (max-width: 768px) {
@@ -131,68 +138,3 @@
     <header class="header">
         <nav class="container flex justify-between items-center p-4">
             <div class="logo-container">
-                <img src="demmler-logo-transparent.svg" alt="DEMMLER INGENIEURE">
-            </div>
-            <div class="mobile-menu-btn" id="mobileMenuBtn">☰</div>
-            <div class="nav-links flex gap-4" id="navLinks">
-                <a href="#ueber-uns" class="nav-link">Über uns</a>
-                <a href="#leistungen" class="nav-link">Leistungen</a>
-                <a href="#projekte" class="nav-link">Projekte</a>
-                <a href="#impressum" class="nav-link">Impressum</a>
-            </div>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">Verbindungen schaffen</h1>
-            <p class="text-xl">Technische Expertise & verlässliche Partnerschaft für Ihre Infrastruktur</p>
-        </div>
-    </section>
-
-    <section id="ueber-uns" class="section">
-        <div class="container text-center max-w-3xl">
-            <h2 class="section-title">Über uns</h2>
-            <p class="text-lg text-gray-600">
-                Wir begleiten anspruchsvolle Infrastrukturprojekte in den Bereichen Ingenieurbau, Eisenbahn, Straße und Industrie – von der Planung bis zur Bauüberwachung.
-            </p>
-        </div>
-    </section>
-
-    <section id="projekte" class="section bg-gray-100">
-        <div class="container">
-            <h2 class="section-title">Projekte</h2>
-            <div class="grid md:grid-cols-2 gap-4">
-                <div class="project-card">Neubau EÜ Weidenbach</div>
-                <div class="project-card">Modernisierung Knoten Lindau</div>
-                <div class="project-card">Erneuerung Stützmauer Seedamm</div>
-                <div class="project-card">Papierfabrik Industrieanlagen</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="impressum" class="section">
-        <div class="container max-w-2xl bg-gray-50 p-8 rounded-xl">
-            <h2 class="section-title text-2xl">Impressum</h2>
-            <p><strong>Alexander Demmler</strong><br>Einzelunternehmen</p>
-            <p class="mt-4">Schellenbergerstrasse 39<br>FL-9493 Mauren<br>Liechtenstein</p>
-            <p class="mt-4">Telefon: <a href="tel:+41715112517" class="text-green-800 font-bold">+41 71 511 25 17</a></p>
-            <p>E-Mail: <a href="mailto:kontakt@demmler-ing.com" class="text-green-800 font-bold">kontakt@demmler-ing.com</a></p>
-            <p class="mt-4 text-sm text-gray-500">USt-ID: CHE-350.438.676</p>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <p>© 2026 DEMMLER INGENIEURE | <a href="mailto:kontakt@demmler-ing.com" class="underline">kontakt@demmler-ing.com</a></p>
-    </footer>
-
-    <script>
-        const btn = document.getElementById('mobileMenuBtn');
-        const nav = document.getElementById('navLinks');
-        btn.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            btn.textContent = nav.classList.contains('active') ? '✕' : '☰';
-        });
-    </script>
-</body>
-</html>
