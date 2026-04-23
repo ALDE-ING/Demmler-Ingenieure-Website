@@ -103,7 +103,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,112C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background: url('image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,112C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
             background-size: cover;
             opacity: 0.3;
         }
@@ -198,6 +198,7 @@
             border-radius: 12px;
             display: flex;
             align-items: center;
+
             justify-content: center;
             margin: 0 auto 20px;
             color: var(--color-white);
@@ -398,6 +399,7 @@
             }
 
             .hero h1 {
+
                 font-size: 32px;
             }
 
@@ -438,20 +440,43 @@
                 padding: 60px 20px;
             }
         }
+
+        /* Neue Projekt-Styles */
+        .project-card-new {
+            background: var(--color-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .project-card-new:hover {
+            transform: translateY(-10px);
+        }
+        .project-info-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            background: var(--color-light);
+            padding: 0 20px;
+        }
+        .project-info-content.active {
+            max-height: 500px;
+        }
     </style>
 </head>
 <body>
     <header class="header">
         <nav class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 15px 20px;">
             <div class="logo-container">
-                <img src="demmler-logo-transparent.svg" alt="DEMMLER INGENIEURE" style="height: 50px; width: auto; display: block;">
+                <img src="https://api.kuse.ai/api/folder/v1/file/1fa3cf557a819643063ee11d6478290a490c82d7c33828e5a5d24d84beb8e72d_1740164.png" alt="DEMMLER INGENIEURE" style="height: 50px; width: auto; display: block;">
             </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">☰</button>
             <div class="nav-links" id="navLinks" style="display: flex; gap: 10px; align-items: center;">
                 <a href="#leistungen" class="nav-link">Leistungen</a>
                 <a href="#ueber-uns" class="nav-link">Über uns</a>
                 <a href="#projekte" class="nav-link">Projekte</a>
-                <a href="impressum.html" class="nav-link">Impressum</a>
+                <a href="#kontakt" class="nav-link">Kontakt</a>
             </div>
         </nav>
     </header>
@@ -467,7 +492,7 @@
         <div class="container">
             <h2 class="section-title">Über uns</h2>
             <p class="about-text">
-                Verbindungen schaffen – das ist unser Anspruch in mehrfacher Hinsicht. Technisch verbinden wir Regionen durch Brücken, Bahnanlagen und Verkehrswege. Menschlich verbinden wir Bauherren, Planer und ausführende Unternehmen auf Augenhöhe durch verlässliches Projektmanagement und partnerschaftliche Zusammenarbeit. Mit fundierter Expertise begleiten wir anspruchsvolle Infrastrukturprojekte in den Bereichen Ingenieurbau, Eisenbahn, Straße, Industrie und Netzausbau – von der Idee bis zur Bauüberwachung.
+                Verbindungen schaffen – das ist unser Anspruch in mehrfacher Hinsicht. Technisch verbinden wir Regionen durch Brücken, Bahnanlagen und Verkehrswege. Menschlich verbinden wir Bauherren, Planer und ausführende Unternehmen auf Augenhöhe durch verlässliche Projektsteuerung und partnerschaftliche Zusammenarbeit. Mit fundierter Expertise begleiten wir anspruchsvolle Infrastrukturprojekte in den Bereichen Ingenieurbau, Eisenbahn, Straße, Industrie und Netzausbau – von der Projektsteuerung bis zur Bauüberwachung.
             </p>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 40px;">
                 <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
@@ -485,27 +510,39 @@
 
     <section id="leistungen" class="section" style="background: var(--color-light);">
         <div class="container">
-            <h2 class="section-title">Leistungen</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon" data-icon="IB">IB</div>
-                    <h3 class="service-title">Ingenieurbau</h3>
+            <h2 class="section-title">Unsere Leistungen</h2>
+            <div class="about-text" style="text-align: left; max-width: 1000px; margin: 0 auto;">
+                <p style="margin-bottom: 30px; font-size: 18px;">Wir begleiten Bauvorhaben über alle Leistungsphasen hinweg. Gemeinsam mit unseren Partnern unterstützen wir Auftraggeber bei der Planung, Abwicklung und Kontrolle ihrer Projekte.</p>
+                
+                <div style="margin-bottom: 40px;">
+                    <h3 style="font-size: 24px; font-weight: 600; color: var(--color-primary); margin-bottom: 15px;">Projektsteuerung & Management</h3>
+                    <p style="margin-bottom: 15px;">Wir sorgen für Struktur im Projektablauf und behalten die wesentlichen Rahmendaten im Blick.</p>
+                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 30px;">
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--color-primary);">•</span> <strong>Terminplanung:</strong> Erstellung und Überwachung von Zeitabläufen.</li>
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--color-primary);">•</span> <strong>Kostenkontrolle:</strong> Laufende Prüfung der Ausgaben zur Einhaltung des Budgets.</li>
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--color-primary);">•</span> <strong>Vertrags- & Nachtragsmanagement:</strong> Sachliche Prüfung und Bearbeitung von vertraglichen Ansprüchen.</li>
+                    </ul>
+
+                    <h3 style="font-size: 24px; font-weight: 600; color: var(--color-primary); margin-bottom: 15px;">Planung & Qualitätssicherung</h3>
+                    <p style="margin-bottom: 15px;">Wir prüfen Unterlagen fachlich, um einen reibungslosen Ablauf auf der Baustelle zu unterstützen.</p>
+                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 30px;">
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--color-primary);">•</span> <strong>Planprüfung:</strong> Kontrolle von Ausführungsplänen auf Richtigkeit und Umsetzbarkeit.</li>
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--color-primary);">•</span> <strong>Prüfung von Ausschreibungen:</strong> Plausibilitätsprüfung vorliegender Vergabeunterlagen.</li>
+                    </ul>
+
+                    <h3 style="font-size: 24px; font-weight: 600; color: var(--color-primary); margin-bottom: 15px;">Bauüberwachung & Unterstützung</h3>
+                    <p style="margin-bottom: 15px;">Wir begleiten die Umsetzung vor Ort und entlasten den Bauherrn im Tagesgeschäft.</p>
+                    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 30px;">
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--color-primary);">•</span> <strong>Bauüberwachung:</strong> Überprüfung der ordnungsgemäßen Ausführung auf der Baustelle.</li>
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; color: var(--color-primary);">•</span> <strong>Unterstützung der Auftraggeber:</strong> Beratung bei technischen und organisatorischen Fragen während der Projektabwicklung.</li>
+                    </ul>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon" data-icon="EB">EB</div>
-                    <h3 class="service-title">Eisenbahn</h3>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon" data-icon="ST">ST</div>
-                    <h3 class="service-title">Straße</h3>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon" data-icon="IN">IN</div>
-                    <h3 class="service-title">Industrie</h3>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon" data-icon="NA">NA</div>
-                    <h3 class="service-title">Netzausbau</h3>
+
+                <div style="margin-top: 60px; padding-top: 40px; border-top: 2px solid #e5e7eb;">
+                    <h3 style="font-size: 24px; font-weight: 600; color: var(--color-primary); margin-bottom: 15px;">Unsere Expertise</h3>
+                    <p style="font-size: 18px; line-height: 1.8; color: #4b5563;">
+                        Unsere Arbeitsweise basiert auf einer über 25-jährigen Erfahrung in der Planung, Bauüberwachung und im Projektmanagement. In dieser Zeit haben wir ein breites Spektrum an Projekten erfolgreich begleitet – von der Verkehrsinfrastruktur im Eisenbahn- und Straßenbau über den konstruktiven Ingenieurbau bei Brückenprojekten bis hin zum klassischen Hochbau. Ein besonderer Schwerpunkt liegt zudem in der technischen Betreuung komplexer Anlagen in der Papierindustrie. Wir bringen diese langjährige Praxis direkt in die Projekte unserer Auftraggeber ein und stehen für eine direkte, lösungsorientierte Zusammenarbeit.
+                    </p>
                 </div>
             </div>
         </div>
@@ -514,87 +551,50 @@
     <section id="projekte" class="section projects-section">
         <div class="container">
             <h2 class="section-title">Ausgewählte Projekte</h2>
-
-            <div class="project-category">
-                <h3 class="category-title">Ingenieurbau</h3>
-                <div class="projects-list">
-                    <div class="project-card">
-                        <div class="project-name">Neubau EÜ Weidenbach</div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; margin-top: 50px;">
+                <!-- Projekt 1: ABS38 -->
+                <div class="project-card-new" onclick="toggleProject('abs38')">
+                    <div style="height: 250px; overflow: hidden; position: relative;">
+                        <img src="https://api.kuse.ai/api/folder/v1/file/bf441453a57c4d4cabc085fdcf2712c18942583d5cd37e9c3fe6f754dae572bd_4635756.jpeg" alt="Projekt ABS38" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.7)); padding: 20px;">
+                            <h3 style="color: white; margin: 0; font-size: 24px;">ABS38</h3>
+                        </div>
                     </div>
-                    <div class="project-card">
-                        <div class="project-name">Erneuerung EÜ Erdinger Straße</div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-name">Neubau EÜ Überwerfungsbauwerk Strecken 5600-5601</div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-name">Erneuerung der Stützmauer Seedamm Lindau</div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-name">Neubau EÜ Bregenzer Straße als Bahnübergangsersatz</div>
+                    <div id="info-abs38" class="project-info-content">
+                        <div style="padding: 20px 0;">
+                            <p style="margin-bottom: 10px;"><strong>Ausbaustrecke München-Mühldorf-Freilassing</strong></p>
+                            <p>Umfassende Begleitung bei der Planung und technischen Umsetzung der Streckenelektrifizierung und des zweigleisigen Ausbaus für eine leistungsstarke Schieneninfrastruktur.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="project-category">
-                <h3 class="category-title">Eisenbahn</h3>
-                <div class="projects-list">
-                    <div class="project-card">
-                        <div class="project-name">Neubau Stellwerk Markt Schwaben und Umbau Spurplan Markt Schwaben</div>
-                        <div class="project-client">Bauherr: DB InfraGO AG</div>
+                <!-- Projekt 2: Bahnknoten Lindau -->
+                <div class="project-card-new" onclick="toggleProject('lindau')">
+                    <div style="height: 250px; overflow: hidden; position: relative;">
+                        <img src="https://api.kuse.ai/api/folder/v1/file/e13ef8d0fd8f800660ca72a407754c4cdb0cd8f834d5dcd3a13c874a01b0831b_4635755.jpeg" alt="Bahnknoten Lindau" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.7)); padding: 20px;">
+                            <h3 style="color: white; margin: 0; font-size: 24px;">Bahnknoten Lindau</h3>
+                        </div>
                     </div>
-                    <div class="project-card">
-                        <div class="project-name">Erweiterung und Erneuerung Bahnhof Markt Schwaben</div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-name">Neubau Verkehrsstation Lindau-Reutin</div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-name">Neubau und Erneuerung der Oberleitungsanlage im Knoten Lindau</div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-name">Neubau der Abstellanlage in Lindau Reutin</div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-name">Neubau ESTW Knoten Lindau</div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-name">Umbau und Erneuerung Bahnübergang Zeltweg</div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-name">Umbau und Erneuerung Bahnübergang Eichwaldstraße</div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-name">Erneuerung und Erweiterung Spurplan Westkopf Lindau Reutin</div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-name">EÜ bei Schlössel, Pressnitztalbahn</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-category">
-                <h3 class="category-title">Industrie</h3>
-                <div class="projects-list">
-                    <div class="project-card">
-                        <div class="project-name">Papierfabrik Schweiz, Deutschland, England, Brasilien</div>
+                    <div id="info-lindau" class="project-info-content">
+                        <div style="padding: 20px 0;">
+                            <p style="margin-bottom: 10px;"><strong>Modernisierung und Neubau Knotenpunkt Lindau</strong></p>
+                            <p>Technische Betreuung und Projektsteuerung für den Neubau der Abstellanlage, die Modernisierung der Stellwerkstechnik und den Ausbau der Verkehrsstation Reutin.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="impressum" class="section impressum-section">
+    <section id="kontakt" class="section impressum-section">
         <div class="container">
-            <h2 class="section-title">Impressum</h2>
+            <h2 class="section-title">Kontakt</h2>
             <div class="impressum-content">
                 <div class="impressum-item">
                     <span class="impressum-label">Firmenname:</span>
                     <span>Alexander Demmler</span>
-                </div>
-                <div class="impressum-item">
-                    <span class="impressum-label">Rechtsform:</span>
-                    <span>Einzelunternehmen</span>
                 </div>
                 <div class="impressum-item">
                     <span class="impressum-label">Adresse:</span>
@@ -608,37 +608,20 @@
                     <span class="impressum-label">E-Mail:</span>
                     <span><a href="/cdn-cgi/l/email-protection#d4b5b8b1acb5bab0b1a6fab0b1b9b9b8b1a694b0b1b9b9b8b1a6f9bdbab3fab7bbb9" style="color: var(--color-primary); text-decoration: none;"><span class="__cf_email__" data-cfemail="9efff2fbe6fff0fafbecb0fafbf3f3f2fbecdefafbf3f3f2fbecb3f7f0f9b0fdf1f3">[email&nbsp;protected]</span></a></span>
                 </div>
-                <div class="impressum-item">
-                    <span class="impressum-label">Berufsbezeichnung:</span>
-                    <span>Bauingenieur (Bewilligung gemäss Bauwesen-Berufe-Gesetz ausgestellt vom Amt für Volkswirtschaft)</span>
-                </div>
-                <div class="impressum-item">
-                    <span class="impressum-label">Berufshaftpflichtversicherung:</span>
-                    <span>Liberty Mutual Insurance Europe SE</span>
-                </div>
-                <div class="impressum-item">
-                    <span class="impressum-label">Umsatzsteuer-ID:</span>
-                    <span>CHE-350.438.676</span>
-                </div>
-                <div class="impressum-disclaimer">
-                    <strong>Haftungsausschluss:</strong><br>
-                    Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte wird jedoch keine Gewähr übernommen. Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für externe Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
-                </div>
             </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="footer-content">
-            <p>© 2026 DEMMLER INGENIEURE - Alexander Demmler</p>
+            <p>© 2024 DEMMLER INGENIEURE - Alexander Demmler</p>
             <p style="margin-top: 10px;">
-                <a href="mailto:office@demmler-ingenieure.li">office@demmler-ingenieure.li</a> | 
+                <a href="/cdn-cgi/l/email-protection#26474a435e47484243540842434b4b4a43546642434b4b4a43540b4f48410845494b"><span class="__cf_email__" data-cfemail="3958555c4158575d5c4b175d5c5454555c4b795d5c5454555c4b1450575e175a5654">[email&nbsp;protected]</span></a> | 
                 <a href="tel:+41715112517">+41 71 511 25 17</a>
             </p>
-            <p style="margin-top: 12px; font-size: 14px;">
-                <a href="impressum.html" style="color: rgba(255,255,255,0.6); margin: 0 8px;">Impressum</a>
-                <span style="color: rgba(255,255,255,0.3);">|</span>
-                <a href="datenschutz.html" style="color: rgba(255,255,255,0.6); margin: 0 8px;">Datenschutz</a>
+            <p style="margin-top: 15px;">
+                <a href="impressum.html">Impressum</a> | 
+                <a href="datenschutz.html">Datenschutz</a>
             </p>
             <a href="https://kuse.ai" target="_blank" rel="noopener noreferrer" class="kuse-branding">
                 <span>made with</span>
@@ -684,6 +667,11 @@
                 mobileMenuBtn.textContent = `☰`;
             }
         });
+
+        function toggleProject(id) {
+            const info = document.getElementById('info-' + id);
+            info.classList.toggle('active');
+        }
     </script>
     <script src="https://cdn.kuse.ai/sdk.prd.js"></script>
 
