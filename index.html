@@ -3,28 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demmler Ingenieure</title>
+    <meta name="description" content="DEMMLER INGENIEURE - Ganzheitliche Projektbegleitung im Ingenieurbau, Eisenbahninfrastruktur, Straßenverkehrsinfrastruktur, Industrieanlagen und Netzausbau">
+    <meta name="keywords" content="Bauingenieur, Ingenieurbau, Eisenbahninfrastruktur, Verkehrsinfrastruktur, Liechtenstein, Alexander Demmler">
+    <title>DEMMLER INGENIEURE - Bauingenieur Liechtenstein</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --color-primary: #5a5f3d;
+            --color-secondary: #7a8050;
+            --color-accent: #8a9060;
+            --color-dark: #1f2937;
+            --color-light: #f3f4f6;
+            --color-white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--color-dark);
+            background-color: var(--color-white);
+            line-height: 1.6;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .logo-container img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-link {
+            color: var(--color-dark);
+            text-decoration: none;
+            padding: 8px 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--color-primary);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(90, 95, 61, 0.85), rgba(90, 95, 61, 0.85)), url('https://media.istockphoto.com/id/1333158315/photo/civil-engineer-jobs-double-exposure-of-project-management-team-and-construction-site-with.jpg?s=612x612&w=0&k=20&c=1_3sEY8vgL_UFzNmlDUrdy1uYu8Xh9K-CoXqo4OgyIw=');
+            background-size: cover;
+            background-position: center;
+            color: var(--color-white);
+            padding: 180px 20px 120px;
+            text-align: center;
+        }
+
+        .section {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: var(--color-white);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--color-primary);
+            margin-bottom: 15px;
+            transition: transform 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateX(5px);
+        }
+
+        .footer {
+            background: var(--color-dark);
+            color: var(--color-white);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--color-primary);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn { display: block; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+            .nav-links.active { display: flex; }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Demmler Ingenieure</h1>
-        <!-- Replace Impressum header link with Kontakt -->
-        <nav>
-            <ul>
-                <li><a href="kontakt.html">Kontakt</a></li>
-                <li><a href="impressum.html">Impressum</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h2>Willkommen bei Demmler Ingenieure</h2>
-        <p>Hier finden Sie Informationen über unsere Dienstleistungen.</p>
-        <!-- Removed Impressum section -->
-    </main>
-    <footer>
-        <p>© 2026 Demmler Ingenieure</p>
-        <!-- Added Impressum link to footer -->
-        <p><a href="impressum.html">Impressum</a></p>
-    </footer>
-</body>
-</html>
+    <header class="header">
+        <nav class="container flex justify-between items-center p-4">
+            <div class="logo-container">
